@@ -1,0 +1,38 @@
+<div>
+   <div class="border border-gray-300 rounded-lg p-8 mb-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-white">
+        <div class="flex items-center space-x-4">
+            <% if @user.avatar.attached? %>
+            <div>
+                <%= image_tag @user.avatar, class: "w-32 h-32 rounded-full object-cover shadow-md" %>
+            </div>
+            <% end %>
+            <div>
+            <h2 class="text-xl font-semibold text-gray-800"><%= @user.username %></h2>
+            <p class="text-gray-600 text-sm mt-2 lg:max-w-1/2"><%= @user.bio %></p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <p class="text-4xl mb-6 underline underline-offset-8">List of all books currently borrowed</p>
+        <div>
+            <% @borrowed_books.each do |book| %>
+                <div class="w-full border border-b-0 last:border border-gray-300 p-3 flex items-center justify-between">
+                    <div>
+                        <span class="text-blue-500">
+                            <%= book.title %>
+                        </span>
+                        <strong>By</strong>
+                        <span><%= book.author%></span>
+                    </div>
+                    <div>
+                        <%= link_to 'return', 
+                            return_borrowed_book_book_path(book),
+                            data: {turbo_method: :post },
+                            class:"bg-red-500 text-sm text-white rounded-md py-1 px-4 hover:bg-red-700" %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
