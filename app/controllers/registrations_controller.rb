@@ -1,6 +1,8 @@
 class RegistrationsController < ApplicationController
   allow_unauthenticated_access
 
+  layout "authentication"
+
   def new
     @user = User.new
   end
@@ -17,6 +19,6 @@ class RegistrationsController < ApplicationController
 
   private
   def sign_up_params
-    params.expect(user: [ :email_address, :password, :password_confirmation ])
+    params.expect(user: [ :avatar, :username, :email_address, :bio, :password, :password_confirmation ])
   end
 end
