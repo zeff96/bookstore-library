@@ -1,12 +1,12 @@
 <div class="w-full border border-b-0 last:border border-gray-300 p-3 flex items-center justify-between">
-    <div>
-        <span>
-            <%= link_to book.title, book_path(book), class: "text-blue-500" %> 
-            <strong>By</strong>
-        </span>
-        <span><%= book.author%></span>
-    </div>
-    <div class="<%= book.available? ? 'bg-green-500': 'bg-red-500'%> px-4 rounded-md text-white">
-        <%= book.status %>
-    </div>
+  <div>
+      <span>
+        <%= link_to book.title, book_path(book), class: "text-blue-500" %> 
+        <strong>By</strong>
+      </span>
+      <span><%= book.author%></span>
+  </div>
+  <div class="<%= book.available? ? 'bg-green-500': 'bg-red-500'%> px-4 rounded-md text-white">
+    <%= book.status %>
+  </div>
 </div>

@@ -13,9 +13,9 @@
     </div>
     <% if @book.status == 'available' %>
         <%= link_to 'borrow', 
-            borrow_book_path(@book),
-            data: {turbo_method: :post },
-            class: "bg-blue-500 text-white text-sm rounded-md py-1 px-4 hover:bg-blue-700" %>
+          borrow_book_path(@book),
+          data: {turbo_method: :post },
+          class: "bg-blue-500 text-white text-sm rounded-md py-1 px-4 hover:bg-blue-700" %>
     <% end %>
   </div>
 </div>

@@ -1,19 +1,19 @@
 <header class="bg-slate-500 text-white p-4 mb-6">
-    <nav>
-        <div class="flex items-center justify-between">
-            <div>
-                <%= link_to "Bookstore", root_path%>
-            </div>
-            <ul class="flex items-center gap-2">
-                <% if Current.user %>
-                    <li>
-                    <%= link_to "Profile", user_path(Current.user) %>
-                    </li>
-                    <li>
-                        <%= button_to "Sign out", session_path, method: :delete, class: "cursor-pointer" %>
-                    </li>
-                <% end %>
-            </ul>
-        </div>
-    </nav>
+  <nav>
+    <div class="flex items-center justify-between">
+      <div>
+          <%= link_to "Bookstore", root_path%>
+      </div>
+      <ul class="flex items-center gap-2">
+        <% if Current.user %>
+          <li>
+            <%= link_to "Profile", user_path(Current.user) %>
+          </li>
+          <li>
+            <%= button_to "Sign out", session_path, method: :delete, class: "cursor-pointer" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
 </header>
