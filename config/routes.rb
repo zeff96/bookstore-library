@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :books, only: %i[index show] do
     member do
       post "borrow"
-      post "return_borrowed_book"
+      patch "return_borrowed_book"
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
