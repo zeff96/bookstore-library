@@ -2,7 +2,7 @@ require "test_helper"
 
 class BooksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @book = create(:book)
+    @book = create(:book, isbn: "12345678-9")
     @user = create(:user)
     sign_in @user
   end
